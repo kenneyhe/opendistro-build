@@ -14,5 +14,9 @@ jobs:
       with:
         token: '${{ github.token }}'
         chart: '.'
+        value-files: >-
+        [
+          "values.yaml"
+        ]
       env:
         KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
