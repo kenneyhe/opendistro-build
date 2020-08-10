@@ -8,4 +8,4 @@ jobs:
     - name: test
       uses: desaintmartin/helm-kubeval-action@master
       with:
-        path: ./helm/opendistro-es
+        path: ./helm/
