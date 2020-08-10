@@ -9,7 +9,7 @@ jobs:
     - name: helm directory
       run: cd helm/opendistro-es/
     - name: ubuntu
-      run: snap install google-cloud-sdk --classic && gcloud init
+      run: sudo snap install google-cloud-sdk --classic && gcloud init
     - name: 'Deploy'
       uses: 'deliverybot/helm@master'
       with:
