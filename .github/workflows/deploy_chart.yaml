@@ -14,10 +14,7 @@ jobs:
       with:
         token: '${{ github.token }}'
         chart: '.'
-        value-files: >-
-        [
-          "values.yaml",
-          "values.yaml"
-        ]
+        release: 'opendistro'
+        namespace: 'default'
       env:
         KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
