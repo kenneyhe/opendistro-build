@@ -15,7 +15,7 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
     - name: helm directory
-      run: cd helm/opendistro-es/ && export PATH=$PATH:/opt/hostedtoolcache/gcloud/275.0.0/x64/bin
+      run: cd helm/opendistro-es/
     - name: 'Deploy'
       uses: 'deliverybot/helm@master'
       with:
