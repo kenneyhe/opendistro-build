@@ -8,14 +8,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: helm directory
       run: cd helm/opendistro-es/
+
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'deliverybot/helm@master'
       with:
-        release: 'credit'
-        namespace: 'test'
-        chart: 'app'
         token: '${{ github.token }}'
-        values: |
-          name: credit
+        chart: '.'
       env:
         KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
