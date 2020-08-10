@@ -16,6 +16,7 @@ jobs:
         chart: '.'
         value-files: >-
         [
+          "values.yaml",
           "values.yaml"
         ]
       env:
