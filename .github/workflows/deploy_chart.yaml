@@ -22,6 +22,6 @@ jobs:
         gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
         cluster_name: ${{ secrets.GCP_CLUSTER_NAME }}
         cluster_region: us-central1-c
-        release_namespace: opendistro
+        release_namespace: default
         release_name: opendistro
         chart_name: helm/opendistro-es/
