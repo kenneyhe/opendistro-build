@@ -8,20 +8,29 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup gcloud environment
       uses: GoogleCloudPlatform/github-actions@0.1.2
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+    - name: Setup Minikube
+      uses: manusa/actions-setup-minikube@v2.0.0
       with:
-        version: '290.0.1'
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        export_default_credentials: true
+        minikube version: 'v1.9.2'
+        kubernetes version: 'v1.18.2'
+#        github token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Interact with the cluster
+      run: kubectl get nodes
+
+#    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+#      with:
+#        version: '290.0.1'
+#        project_id: ${{ secrets.GCP_PROJECT_ID }}
+#        service_account_key: ${{ secrets.GCP_SA_KEY }}
+#        export_default_credentials: true
     - name: helm directory
       run: ls helm/opendistro-es/
-    - uses: hahow/install-helm-chart-action@v1.0.1
-      with:
-        gcloud_auth_key: ${{ secrets.GCP_SA_KEY }}
-        gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
-        cluster_name: ${{ secrets.GCP_CLUSTER_NAME }}
-        cluster_region: us-central1-c
-        release_namespace: default
-        release_name: opendistro
-        chart_name: helm/opendistro-es/
+#    - uses: hahow/install-helm-chart-action@v1.0.1
+#      with:
+#        gcloud_auth_key: ${{ secrets.GCP_SA_KEY }}
+#        gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
+#        cluster_name: ${{ secrets.GCP_CLUSTER_NAME }}
+#        cluster_region: us-central1-c
+#        release_namespace: default
+#        release_name: opendistro
+#        chart_name: helm/opendistro-es/
