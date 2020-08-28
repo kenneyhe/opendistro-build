@@ -25,7 +25,7 @@ jobs:
 #        service_account_key: ${{ secrets.GCP_SA_KEY }}
 #        export_default_credentials: true
     - name: helm directory
-      run: ls helm/opendistro-es/ ~/.kubeconfig
+      run: ls helm/opendistro-es/ /
     - name: deploy postgres to cluster
       uses: wahyd4/kubectl-helm-action@master
       with:
