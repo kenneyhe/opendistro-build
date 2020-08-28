@@ -27,7 +27,7 @@ jobs:
     - name: helm directory
       run: ls helm/opendistro-es/  ~/.kube/config 
     - name: deploy opendistro to cluster
-      run: helm upgrade --install opendistro helm/opendistro-es -n es      
+      run: helm upgrade --install opendistro helm/opendistro-es    
 #    - uses: hahow/install-helm-chart-action@v1.0.1
 #      with:
 #        gcloud_auth_key: ${{ secrets.GCP_SA_KEY }}
